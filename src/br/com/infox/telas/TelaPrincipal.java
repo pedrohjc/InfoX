@@ -72,16 +72,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/infox/icones/DBIcon.png"))); // NOI18N
 
         lblUsuario.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblUsuario.setText("Usuario");
+        lblUsuario.setText("User");
 
         lblData.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblData.setText("Data");
+        lblData.setText("Date");
         lblData.setToolTipText("");
 
-        menCad.setText("Cadastro");
+        menCad.setText("Add");
 
         MenCadCli.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
-        MenCadCli.setText("Cliente");
+        MenCadCli.setText("Clients");
         MenCadCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenCadCliActionPerformed(evt);
@@ -99,7 +99,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menCad.add(MenCadOs);
 
         MenCadUsu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
-        MenCadUsu.setText("Usuarios");
+        MenCadUsu.setText("Users");
         MenCadUsu.setEnabled(false);
         MenCadUsu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,19 +110,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Menu.add(menCad);
 
-        MenRel.setText("Relatorio");
+        MenRel.setText("Report");
 
         MenRelSer.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        MenRelSer.setText("Servicos");
+        MenRelSer.setText("Service");
         MenRelSer.setEnabled(false);
         MenRel.add(MenRelSer);
 
         Menu.add(MenRel);
 
-        MenAju.setText("Ajuda");
+        MenAju.setText("Help");
 
         MenAjuSob.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
-        MenAjuSob.setText("Sobre");
+        MenAjuSob.setText("About");
         MenAjuSob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenAjuSobActionPerformed(evt);
@@ -132,10 +132,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         Menu.add(MenAju);
 
-        MenOpc.setText("Opcoes");
+        MenOpc.setText("Options");
 
         MenOpcSai.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
-        MenOpcSai.setText("Sair");
+        MenOpcSai.setText("Exit");
         MenOpcSai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MenOpcSaiActionPerformed(evt);
@@ -153,29 +153,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(27, 27, 27))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblUsuario)
                             .addComponent(lblData))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblUsuario)
-                .addGap(39, 39, 39)
+                .addGap(35, 35, 35)
                 .addComponent(lblData)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(84, 84, 84))
-            .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(768, 555));

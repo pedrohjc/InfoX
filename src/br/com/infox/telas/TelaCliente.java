@@ -74,25 +74,28 @@ public class TelaCliente extends javax.swing.JInternalFrame {
 
     private void searchClients() {
         String sql = "select * from tbclientes where nomecli like ?";
-        try{
+        try {
             pst = conexao.prepareStatement(sql);
-            
+
             //passing the value of the SearchBox txtCliPesquisar to ?
             pst.setString(1, txtCliPesquisar.getText() + "%");
             rs = pst.executeQuery();
-            
+
             //using the resources of the lib rs2xml.jar to fil the searchbOx
             tblClientes.setModel(DbUtils.resultSetToTableModel(rs));
-            
-        }catch(Exception e){
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
+
     //Method to set the fields of the form with the values of the table
-    public void setFields(){
+    public void setFields() {
         int setar = tblClientes.getSelectedRow();
-//        txtCliNome.setText(tblClientes.getModel().getValueAt(setar, 1));
+        txtCliNome.setText(tblClientes.getModel().getValueAt(setar, 1).toString());
+        txtCliEndereco.setText(tblClientes.getModel().getValueAt(setar, 2).toString());
+        txtCliFone.setText(tblClientes.getModel().getValueAt(setar, 3).toString());
+        txtCliEmail.setText(tblClientes.getModel().getValueAt(setar, 4).toString());
     }
 
     /**
@@ -177,6 +180,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblClientes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,6 +272,11 @@ public class TelaCliente extends javax.swing.JInternalFrame {
     private void txtCliPesquisarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCliPesquisarKeyReleased
         searchClients();
     }//GEN-LAST:event_txtCliPesquisarKeyReleased
+    
+    //Evennt used to set table fields by clicking on the table.
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        setFields();
+    }//GEN-LAST:event_tblClientesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
